@@ -5,7 +5,7 @@ from tkinter import messagebox
 import webbrowser
 
 ###認証情報の読み込み###
-with open(".secret/userkey.txt", "r") as f:
+with open(".secret/userkey.txt", "r",encoding="utf-8_sig") as f:
     lines = f.readlines()
     try:
         apikey = lines[0].strip()
