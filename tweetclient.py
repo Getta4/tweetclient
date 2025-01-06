@@ -5,20 +5,36 @@ from tkinter import messagebox
 import webbrowser
 
 ###認証情報の読み込み###
-with open(".secret/userkey.txt", "r",encoding="utf-8_sig") as f:
-    lines = f.readlines()
-    try:
-        apikey = lines[0].strip()
-        apiSecret = lines[1].strip()
-        accessToken = lines[2].strip()
-        accessSecret = lines[3].strip()
-    except:
-        apikey = ""
-        apiSecret = ""
-        accessToken = ""
-        accessSecret = ""
-lines_rstrip = [line.rstrip("\n") for line in lines]
-#print(lines_rstrip)
+try:
+    with open("userkey.txt", "r",encoding="utf-8_sig") as f:
+        lines = f.readlines()
+        try:
+            apikey = lines[0].strip()
+            apiSecret = lines[1].strip()
+            accessToken = lines[2].strip()
+            accessSecret = lines[3].strip()
+        except:
+            apikey = ""
+            apiSecret = ""
+            accessToken = ""
+            accessSecret = ""
+    lines_rstrip = [line.rstrip("\n") for line in lines]
+    #print(lines_rstrip)
+except:
+    with open("userkey.txt", "w",encoding="utf-8_sig") as f:
+        try:
+            apikey = lines[0].strip()
+            apiSecret = lines[1].strip()
+            accessToken = lines[2].strip()
+            accessSecret = lines[3].strip()
+        except:
+            apikey = ""
+            apiSecret = ""
+            accessToken = ""
+            accessSecret = ""
+    lines_rstrip = [line.rstrip("\n") for line in lines]
+    #print(lines_rstrip)
+    
 
 ###変数の設定###
 window = tk.Tk()
