@@ -38,6 +38,7 @@ except:
 
 ###変数の設定###
 window = tk.Tk()
+iconpath =  tk.PhotoImage(file="icon.ico")
 posX = tk.X
 posY = tk.Y
 setFile = False
@@ -118,7 +119,7 @@ def close_window(root, apikey2, apiSecret2, accessToken2, accessSecret2):
     root.destroy()
 
     #入力内容を保存
-    file = open(".secret/userkey.txt", "w")
+    file = open("userkey.txt", "w")
     file.write(apikey + "\n" + apiSecret + "\n" + accessToken + "\n" + accessSecret)
     file.close()
 
@@ -162,8 +163,8 @@ def openGithub():
     webbrowser.open("https://github.com/getta4/TweetClient",new=1,autoraise=True)
 
 def openFileDialog():
-    global filename
     global setFile
+    global filename
     import tkinter.filedialog
     filename = tkinter.filedialog.askopenfilename(title="画像ファイルを選択してください",filetypes=[("画像ファイル","*.png *.jpg *.jpeg *.gif")])
     setFile = True
@@ -174,6 +175,7 @@ window.title("Tweet Client")
 window.geometry("700x400")
 window.resizable(False, False)
 window.minsize(700, 400)
+window.iconphoto(False,iconpath)
 
 cv = tk.Canvas(window, width=700, height=400,bg="black") #キャンバスを作成
 cv.pack(expand=True, fill=tk.BOTH)
