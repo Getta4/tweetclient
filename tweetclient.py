@@ -22,6 +22,7 @@ try:
     #print(lines_rstrip)
 except:
     with open("userkey.txt", "w",encoding="utf-8_sig") as f:
+        lines = f.readlines()
         try:
             apikey = lines[0].strip()
             apiSecret = lines[1].strip()
@@ -141,13 +142,13 @@ def setting():
     apiSecret = tk.Entry(root,show="*", width=48)
     apiSecret.grid(row=2, column=2)
 
-    accessToken_label = tk.Label(root,text="Client ID")
+    accessToken_label = tk.Label(root,text="Access Token")
     accessToken_label.grid(row=3, column=1, padx=10)
 
     accessToken = tk.Entry(root,show="*",width=48)
     accessToken.grid(row=3, column=2)
 
-    accessSecret_label = tk.Label(root,text="Client Secret")
+    accessSecret_label = tk.Label(root,text="Access Secret")
     accessSecret_label.grid(row=4, column=1, padx=10)
 
     accessSecret = tk.Entry(root,show="*", width=48)
