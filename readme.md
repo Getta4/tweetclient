@@ -4,7 +4,7 @@ TweetClientは、Twitter APIを使用してツイートを投稿するための�
 
 ## 使用方法・インストール
 
-1. [こちら](https://github.com/Getta4/tweetclient/releases) から **Tweetclient_vX.X.zip** をダウンロードし、解凍してください。
+1. [こちら](https://github.com/Getta4/tweetclient/releases) から、一番最新のバージョンの **Tweetclient_vX.X.zip** をダウンロードし、解凍してください。
 
 2. 解凍が完了したら、フォルダ内のTweetclient.exeを起動してください。
 
